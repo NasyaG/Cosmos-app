@@ -20,8 +20,8 @@
         <div class="location" style="color:rgb(184, 239, 247); font-weight:bold">{{ weather.name }}, {{ weather.sys.country }}</div>
          <!-- city and country are bound from api -->
         <div class="date" style="color:rgb(184, 239, 247); ">{{ dateBuilder() }}</div>
-        <div class="sunrise">hello</div>
-        <div class="sunset">hello</div>
+        <div class="sunrise">{{ weather.sys.sunrise }}~Sunrise time in UTC</div>
+        <div class="sunset">{{ weather.sys.sunset }}~Sunset time in UTC</div>
  
       </div>
     </div>
@@ -34,7 +34,11 @@
     <!-- </div> -->
     <div class="utc-container">
       <div class="utc">
-
+        <h3>What is UTC?</h3>
+        <p>
+        Coordinated Universal Time (UTC) is the basis for civil time today. This 24-hour time standard is kept using highly precise atomic clocks combined with the Earth's rotation.
+        Universal Time (UT) was created at the International Meridian Conference in 1884. This is the basis for the 24-hour time zone system we know today. While in space, NASA uses UTC!
+        </p>
       </div>
     </div>
     
@@ -171,7 +175,7 @@ main{
  padding: 1rem; 
  /* "clamp-card layout" */
  color: whitesmoke;
- font-size: 32px;
+ font-size: 38px;
  font-weight: 500;
  text-align:center;
  text-shadow: 1px 3px rgba(184, 239, 247, 0.26);
@@ -225,10 +229,30 @@ main{
   align-items: center;
  
 }
+.utc-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.utc{
+ color:rgb(13, 13, 107);
+ font-size: 20px;
+ font-weight: bold;
+ text-align:center;
+ font-style: italic;
+ width: 300px;
+ margin-bottom: 30px;
+ padding: 15px;
+
+  background-color: rgba(163, 226, 236, 0.431);
+  border-radius: 16px;
+  margin: 30px 0px;
+}
 .astronaut-facts{
  color:azure;
  font-size: 20px;
- font-weight: 300;
+ font-weight: bold;
  text-align:center;
  font-style: italic;
  width: 300px;
@@ -245,6 +269,24 @@ h3 {
 p{
   margin-top: 0.5rem;
   font-size: 15px;
+}
+.sunrise{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+ color: rgb(243, 220, 92);
+ padding:5px;
+}
+.sunset{
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+ color: rgb(243, 220, 92);
+ padding: 5px;
 }
 footer{
   color:rgb(184, 239, 247);
